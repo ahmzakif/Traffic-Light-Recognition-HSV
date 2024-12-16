@@ -64,6 +64,18 @@ Here are examples of the processed video outputs:
 - **Log File Path:** Set the log file path in the `__init__` method.
 - **Color Ranges:** Modify the HSV color ranges for red, yellow, and green in `self.color_ranges` if needed.
 
+## Logging
+
+Detected traffic lights are logged in `data/log/traffic_light_log_1.txt`. Each log entry includes:
+- Timestamp
+- Detected color
+- Position and size of the traffic light in the frame
+
+Example log entry:
+```
+2024-12-16 14:32:10 - [2024-12-16 14:32:10] Detected RED light at position 120,200
+```
+
 ## Limitations
 
 - Works best for traffic lights with clear visibility and less occlusion.
