@@ -179,7 +179,7 @@ class TrafficLightDetector:
             return
         
         # Resize frame menjadi setengah ukuran asli
-        frame = cv2.resize(frame, (width // 1, height // 1))
+        # frame = cv2.resize(frame, (width // 2, height // 2))
 
         # Menampilkan UI untuk memilih ROI interaktif
         if not self.select_roi(frame):
@@ -204,7 +204,7 @@ class TrafficLightDetector:
                 break
 
             # Resize frame menjadi setengah ukuran asli
-            frame = cv2.resize(frame, (width // 1, height // 1))
+            # frame = cv2.resize(frame, (width // 2, height // 2))
 
             # Deteksi lampu lalu lintas pada frame dengan mask ROI
             processed_frame, _ = self.detect_traffic_lights(frame, roi_mask)
