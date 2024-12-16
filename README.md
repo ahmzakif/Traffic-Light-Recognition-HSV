@@ -13,16 +13,13 @@ This project provides a Python-based solution to detect traffic light signals in
 ## Usage
 
 1. **Input Video:** Place your input video in the `data/videos/` directory.
-
 2. **Run the Script:**
+
    ```bash
    python traffic_light_detector.py
    ```
-
 3. **Interactive ROI Selection:** The program will prompt a window to select a region of interest (ROI). Use your mouse to draw a rectangle around the area of interest and press Enter.
-
 4. **Output Video:** Processed video with detected traffic lights will be saved in the `data/videos/` directory with the name `output_video1.mp4`.
-
 5. **Logs:** Detection logs are saved in `data/log/traffic_light_log_1.txt`.
 
 ## Example Output
@@ -30,10 +27,12 @@ This project provides a Python-based solution to detect traffic light signals in
 Here are examples of the processed video outputs:
 
 ### Output Video 1
-![Output Video 1](data/videos/output_video1.mp4)
+
+![Output Video 1](data/videos/output1.gif)
 
 ### Output Video 2
-![Output Video 2](data/videos/output_video2.mp4)
+
+![Output Video 2](data/videos/output2.gif)
 
 ## Key Functions
 
@@ -43,19 +42,14 @@ Here are examples of the processed video outputs:
 
 - **`__init__(log_file)`**
   Initializes the detector and sets up HSV color ranges, CLAHE parameters, and logging.
-
 - **`preprocess_frame(frame)`**
   Enhances the input frame for better visibility in low-light conditions.
-
 - **`detect_traffic_lights(frame, mask)`**
   Detects traffic lights within the ROI using HSV masks.
-
 - **`show_fps(frame, prev_time)`**
   Displays the current FPS on the video frame.
-
 - **`select_roi(frame)`**
   Allows the user to select a region of interest (ROI) interactively.
-
 - **`process_video(input_video_path, output_video_path)`**
   Processes the input video and saves the output with detected traffic lights.
 
@@ -67,11 +61,13 @@ Here are examples of the processed video outputs:
 ## Logging
 
 Detected traffic lights are logged in `data/log/traffic_light_log_1.txt`. Each log entry includes:
+
 - Timestamp
 - Detected color
 - Position and size of the traffic light in the frame
 
 Example log entry:
+
 ```
 2024-12-16 14:32:10 - [2024-12-16 14:32:10] Detected RED light at position 120,200
 ```
@@ -80,4 +76,3 @@ Example log entry:
 
 - Works best for traffic lights with clear visibility and less occlusion.
 - ROI selection is manual and may need to be adjusted for different videos.
-
